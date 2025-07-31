@@ -16,11 +16,11 @@ This repository contains two versions of a script that fetches resource usage da
 
 ## Features
 
-- 🔐 **Authentication**: Uses TOML configuration for seamless authentication and context management
-- 📊 **Resource Tracking**: Tracks SLOs, SLO Units, Composite SLO Components, Data Sources, and Users
-- 📈 **Historical Data**: Appends data to CSV files for trend analysis
-- 🎯 **Flexible**: Supports multiple contexts and custom CSV file names
-- 🌐 **Custom Instances**: Supports custom Nobl9 instances with custom base URLs
+- **Authentication**: Uses TOML configuration for seamless authentication and context management
+- **Resource Tracking**: Tracks SLOs, SLO Units, Composite SLO Components, Data Sources, and Users
+- **Historical Data**: Appends data to CSV files for trend analysis
+- **Flexible**: Supports multiple contexts and custom CSV file names
+- **Custom Instances**: Supports custom Nobl9 instances with custom base URLs
 
 
 ## Prerequisites
@@ -114,7 +114,7 @@ OKTA_ORG_URL = None
 OKTA_AUTH_SERVER = None
 ```
 
-**⚠️ Security Warning**: Never commit hardcoded credentials to version control! Consider using environment variables for production use.
+**Security Warning**: Never commit hardcoded credentials to version control! Consider using environment variables for production use.
 
 ## Output
 
@@ -143,33 +143,33 @@ The script will:
 ## Example Output
 
 ```
-🚀 Nobl9 Resource Usage Tracker
+Nobl9 Resource Usage Tracker
 ========================================
-📋 Loading configuration...
-✅ Using context: default
-🔐 Authenticating...
-✅ Successfully authenticated with Nobl9
-📊 Fetching resource usage data...
+Loading configuration...
+Using context: default
+Authenticating...
+Successfully authenticated with Nobl9
+Fetching resource usage data...
 
-📊 Resource Usage Summary:
+Resource Usage Summary:
    Tier: Nobl9 Enterprise
    Generated: 2024-01-15T10:30:00Z
    License End: 2024-12-31T23:59:59Z
 
-📈 Usage Details:
+Usage Details:
    SLOs: 15/20
    SLO Units: 45/50
    Composite SLO Components: 5/10
    Data Sources: 8/12
    Users: 12/15
 
-💾 Appending data to nobl9_resource_usage.csv...
-✅ Data appended to nobl9_resource_usage.csv
+Appending data to nobl9_resource_usage.csv...
+Data appended to nobl9_resource_usage.csv
    Timestamp: 2024-01-15T10:30:15.123456
    Organization: my-org
    Tier: Nobl9 Enterprise
 
-✅ Resource usage tracking completed successfully!
+Resource usage tracking completed successfully!
 ```
 
 ## Automation
@@ -200,14 +200,6 @@ If you prefer to use the main version for automation, specify a context:
 ```bash
 # Run daily at 9 AM using main version with specific context
 0 9 * * * cd /path/to/scripts && python nobl9_resource_usage_tracker.py --context production
-```
-
-#### CI/CD with Context
-```yaml
-- name: Track Nobl9 Resource Usage
-  run: |
-    cd scripts
-    python nobl9_resource_usage_tracker.py --context production --csv-file daily_usage.csv
 ```
 
 ### Environment Variables (Future Enhancement)
