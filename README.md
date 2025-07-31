@@ -20,9 +20,8 @@ This repository contains two versions of a script that fetches resource usage da
 - 📊 **Resource Tracking**: Tracks SLOs, SLO Units, Composite SLO Components, Data Sources, and Users
 - 📈 **Historical Data**: Appends data to CSV files for trend analysis
 - 🎯 **Flexible**: Supports multiple contexts and custom CSV file names
-- 📋 **Rich Output**: Displays detailed usage summaries and quota status
 - 🌐 **Custom Instances**: Supports custom Nobl9 instances with custom base URLs
-- 📁 **Organization-Specific Files**: Automatically creates separate CSV files for different organizations
+
 
 ## Prerequisites
 
@@ -44,21 +43,6 @@ This repository contains two versions of a script that fetches resource usage da
 python nobl9_resource_usage_tracker.py
 ```
 
-#### Specify Context
-```bash
-python nobl9_resource_usage_tracker.py --context default
-```
-
-#### Custom CSV File
-```bash
-python nobl9_resource_usage_tracker.py --csv-file my_usage_tracking.csv
-```
-
-#### Combined Options
-```bash
-python nobl9_resource_usage_tracker.py --context production --csv-file production_usage.csv
-```
-
 ### Hardcoded Version (Automation)
 
 #### Setup
@@ -75,7 +59,7 @@ python nobl9_resource_usage_tracker.py --context production --csv-file productio
 python nobl9_resource_usage_tracker_hc.py
 ```
 
-#### Custom CSV File
+#### Custom CSV File Name
 ```bash
 python nobl9_resource_usage_tracker_hc.py --csv-file automated_usage.csv
 ```
@@ -85,9 +69,6 @@ When no CSV file is specified, both scripts automatically create organization-sp
 ```bash
 # Creates: nobl9_resource_usage_dansepich-2KadyONlKmHJ.csv
 python nobl9_resource_usage_tracker.py
-
-# Creates: nobl9_resource_usage_production-org.csv  
-python nobl9_resource_usage_tracker.py --context production
 
 # Creates: nobl9_resource_usage_your-org-id.csv
 python nobl9_resource_usage_tracker_hc.py
@@ -150,19 +131,14 @@ The script will:
 | `license_end_date` | License expiration date |
 | `slos_current` | Current number of SLOs |
 | `slos_peak` | Peak number of SLOs |
-| `slos_quota_status` | SLO quota status (e.g., "reached") |
 | `slo_units_current` | Current SLO units usage |
 | `slo_units_peak` | Peak SLO units usage |
-| `slo_units_quota_status` | SLO units quota status |
 | `composite_slo_current` | Current composite SLO components |
 | `composite_slo_peak` | Peak composite SLO components |
-| `composite_slo_quota_status` | Composite SLO quota status |
 | `data_sources_current` | Current data sources |
 | `data_sources_peak` | Peak data sources |
-| `data_sources_quota_status` | Data sources quota status |
 | `users_current` | Current users |
 | `users_peak` | Peak users |
-| `users_quota_status` | Users quota status |
 
 ## Example Output
 
@@ -181,11 +157,11 @@ The script will:
    License End: 2024-12-31T23:59:59Z
 
 📈 Usage Details:
-   SLOs: 15/20 (Status: reached)
-   SLO Units: 45/50 (Status: )
-   Composite SLO Components: 5/10 (Status: )
-   Data Sources: 8/12 (Status: reached)
-   Users: 12/15 (Status: )
+   SLOs: 15/20
+   SLO Units: 45/50
+   Composite SLO Components: 5/10
+   Data Sources: 8/12
+   Users: 12/15
 
 💾 Appending data to nobl9_resource_usage.csv...
 ✅ Data appended to nobl9_resource_usage.csv
